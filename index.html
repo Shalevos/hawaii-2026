@@ -224,6 +224,57 @@ h2.big{font-size:clamp(2.1rem,5.4vw,3.6rem);letter-spacing:-.01em}
 .isle-key{display:flex;gap:18px;justify-content:center;margin-top:8px;flex-wrap:wrap;font-size:.78rem;opacity:.85}
 .isle-key span{display:flex;align-items:center;gap:7px}
 .isle-key i{width:11px;height:11px;border-radius:50%;display:inline-block}
+.toggles{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center;margin:24px 0 4px}
+.toggles .toggle{margin:0}
+/* calendar view */
+.cal-view{max-width:1000px;margin:30px auto 0}
+.cal-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:9px;min-width:720px}
+.cal-hd{text-align:center;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;opacity:.55;font-weight:700;padding-bottom:2px}
+.cal-cell{min-height:106px;border-radius:13px;padding:9px 10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);display:flex;flex-direction:column;gap:5px;transition:transform .3s}
+.cal-cell:hover{transform:translateY(-2px)}
+.cal-cell .dn{font-family:var(--serif);font-weight:700;font-size:1.05rem;line-height:1}
+.cal-cell .ttl{font-size:.78rem;line-height:1.22;opacity:.96;font-weight:500}
+.cal-cell .load{align-self:flex-start;margin-top:auto}
+.cal-cell.empty{opacity:.32}
+.cal-cell.bi{background:linear-gradient(155deg,rgba(239,90,42,.30),rgba(239,90,42,.08));border-color:rgba(239,90,42,.45)}
+.cal-cell.ma{background:linear-gradient(155deg,rgba(47,158,99,.30),rgba(47,158,99,.08));border-color:rgba(47,158,99,.45)}
+.cal-cell.ka{background:linear-gradient(155deg,rgba(22,181,166,.28),rgba(22,181,166,.08));border-color:rgba(22,181,166,.45)}
+.cal-cell.travel{background:linear-gradient(155deg,rgba(255,255,255,.20),rgba(255,255,255,.05));border-color:rgba(255,255,255,.34)}
+/* booking briefs: button + modal */
+.planbtn{display:inline-flex;align-items:center;gap:6px;margin-top:8px;background:linear-gradient(120deg,var(--ember),var(--ember-2));color:#fff;border:none;font-family:var(--sans);font-weight:700;font-size:.78rem;letter-spacing:.02em;padding:8px 15px;border-radius:30px;cursor:pointer;transition:transform .25s,filter .25s;box-shadow:var(--shadow-sm)}
+.planbtn:hover{transform:translateY(-2px);filter:brightness(1.07)}
+.planbtn.lite{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.32);box-shadow:none}
+.modal{position:fixed;inset:0;z-index:320;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(5,12,18,.82);backdrop-filter:blur(7px)}
+.modal.on{display:flex}
+.modal-box{position:relative;max-width:640px;width:100%;max-height:88vh;overflow-y:auto;background:linear-gradient(180deg,#fff,#fbf5ea);color:var(--ink);border-radius:22px;box-shadow:var(--shadow);padding:36px 34px 30px;animation:pop .32s cubic-bezier(.16,.8,.3,1)}
+@keyframes pop{from{opacity:0;transform:translateY(22px) scale(.97)}to{opacity:1;transform:none}}
+.modal-x{position:absolute;top:15px;right:15px;width:38px;height:38px;border-radius:50%;border:none;background:rgba(12,24,34,.08);color:var(--ink);font-size:1rem;cursor:pointer;transition:.2s}
+.modal-x:hover{background:rgba(12,24,34,.16);transform:rotate(90deg)}
+.modal h3{font-size:1.7rem;line-height:1.12;margin-bottom:4px;padding-right:34px}
+.modal .m-what{font-size:1.05rem;line-height:1.55;margin:10px 0 16px;color:var(--ink2)}
+.m-guide{display:inline-block;font-size:.8rem;font-weight:700;padding:6px 14px;border-radius:30px;margin-bottom:16px}
+.m-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:16px}
+@media(max-width:520px){.m-grid{grid-template-columns:1fr}}
+.m-cell{background:rgba(12,24,34,.04);border:1px solid rgba(12,24,34,.07);border-radius:12px;padding:12px 14px}
+.m-cell .ml{font-size:.64rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ember);margin-bottom:3px}
+.m-cell .mv{font-size:.92rem;line-height:1.42}
+.m-gear{margin:0 0 16px;padding:14px 16px;background:rgba(15,124,140,.08);border-radius:12px}
+.m-gear .ml{font-size:.64rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);margin-bottom:6px}
+.m-gear ul{margin:0;padding-left:18px;font-size:.9rem;line-height:1.55}
+.m-note{font-size:.9rem;line-height:1.5;background:#fff4e6;border-left:4px solid var(--gold);border-radius:8px;padding:11px 14px;margin-bottom:18px}
+.m-book{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:11px 20px;border-radius:30px;transition:.2s}
+.m-book:hover{background:var(--sea-deep)}
+/* cultural-center panel */
+.pcc{margin-top:46px;background:linear-gradient(120deg,#fff,#fbf5ea);border-radius:20px;padding:30px 32px;box-shadow:var(--shadow-sm);border:1px solid rgba(12,24,34,.06)}
+.pcc-q{font-family:var(--serif);font-size:1.45rem;font-style:italic;color:var(--sea-deep);margin-bottom:8px}
+.pcc>p{font-size:1.02rem;opacity:.86;margin-bottom:18px;max-width:780px}
+.pcc-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:760px){.pcc-cards{grid-template-columns:1fr}}
+.pcc-card{background:rgba(15,124,140,.06);border:1px solid rgba(15,124,140,.16);border-radius:14px;padding:18px 20px}
+.pcc-card h4{font-size:1.1rem;margin-bottom:7px}
+.pcc-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--sea);background:rgba(15,124,140,.12);padding:4px 10px;border-radius:20px;margin-bottom:9px}
+.pcc-card p{font-size:.9rem;line-height:1.5;opacity:.86}
 
 /* booking / CTA */
 .book{background:radial-gradient(120% 100% at 50% 0,#10303a,#0c1822);color:#fff}
@@ -514,7 +565,7 @@ footer a{color:rgba(255,255,255,.7);text-decoration:underline}
     <span class="price reveal d1">≈ $359–399 · 60 min · Kauaʻi</span>
     <p class="reveal d2">You said you wanted to see the Hawaiʻi a hike can't reach. This is it: the fluted green cliffs from above, the wettest crater on earth ringed by a hundred waterfalls, and Manawaiʻopuna — the "Jurassic Park" falls — which is literally impossible to reach on foot.</p>
     <p class="reveal d2">Doors off, harnessed in, wind in your face, at first light when the air is clearest. It's the single best aerial in the islands, and you're already on Kauaʻi for it.</p>
-    <div class="pick reveal d3"><b>We'd book:</b> Jack Harter (doors-off, full 65 min) or Mauna Loa (private, intimate). Morning slot, with a backup day for weather. <br><em>If Kīlauea is erupting during your Big Island days, we'd switch to a volcano flight instead — we'll watch the USGS feed for you.</em></div>
+    <div class="pick reveal d3"><b>We'd book:</b> Jack Harter (doors-off, full 65 min) or Mauna Loa (private, intimate). Morning slot, with a backup day for weather. <br><em>If Kīlauea is erupting during your Big Island days, we'd switch to a volcano flight instead — we'll watch the USGS feed for you.</em><br><button class="planbtn lite" data-exp-btn="heli">ⓘ Plan &amp; book this</button></div>
   </div>
 </section>
 
@@ -527,7 +578,7 @@ footer a{color:rgba(255,255,255,.7);text-decoration:underline}
     <span class="price reveal d1">≈ $130 · 2 hrs · Keauhou Bay · no scuba needed</span>
     <p class="reveal d2">This is the one almost no one forgets. You hold a lit board on the surface; the lights gather plankton; and giant mantas — three, four metres across, utterly harmless — rise out of the black to barrel-roll inches beneath you, mouths open, again and again.</p>
     <p class="reveal d2">It's the most reliable manta encounter on earth, five minutes from your friends' base, in the calmest water on the coast. <b>You snorkel it — no tank, no depth, no pressure.</b> Just wonder.</p>
-    <div class="pick reveal d3"><b>We'd book:</b> a small-group, "green-list" operator (Sea Paradise), early in your Big Island stay so there's a free re-ride if the ocean's shy.</div>
+    <div class="pick reveal d3"><b>We'd book:</b> a small-group, "green-list" operator (Sea Paradise), early in your Big Island stay so there's a free re-ride if the ocean's shy.<br><button class="planbtn lite" data-exp-btn="manta">ⓘ Plan &amp; book this</button></div>
   </div>
 </section>
 
@@ -540,7 +591,7 @@ footer a{color:rgba(255,255,255,.7);text-decoration:underline}
     <span class="price reveal d1">≈ $230 · Kona · open-water certified</span>
     <p class="reveal d2">You don't dive for the sake of diving — so we only put <em>one</em> truly singular dive on the table: Kona's <b>blackwater "Pelagic Magic."</b> Two miles offshore, over open ocean, you hang on a lit line and watch the deep's nightly migration drift up around you — translucent, glowing creatures most divers never see. It was invented here; almost nowhere else offers it.</p>
     <p class="reveal d2">And if Maui happens, <b>Lānaʻi Cathedrals</b> — sunlight through a lava-tube roof — is the gentler, stained-glass alternative.</p>
-    <div class="pick reveal d3"><b>We'd book:</b> Jack's Diving Locker (Tue/Thu). Comfortable in the water? Do the blackwater. Prefer something calmer? The manta <em>dive</em> — kneeling on the sand, mantas overhead — is pure magic and easy.</div>
+    <div class="pick reveal d3"><b>We'd book:</b> Jack's Diving Locker (Tue/Thu). Comfortable in the water? Do the blackwater. Prefer something calmer? The manta <em>dive</em> — kneeling on the sand, mantas overhead — is pure magic and easy.<br><button class="planbtn lite" data-exp-btn="blackwater">ⓘ Plan &amp; book this</button></div>
   </div>
 </section>
 
@@ -573,6 +624,15 @@ footer a{color:rgba(255,255,255,.7);text-decoration:underline}
       <div class="cul reveal d1"><img src="images/bi_kealakekua.jpg" alt="City of Refuge"><div class="ct"><h4>Stand where history happened</h4><p>Puʻuhonua o Hōnaunau — the sacred "place of refuge" — is the best spot in the islands to actually understand old Hawaiʻi.</p></div></div>
       <div class="cul reveal d2"><img src="images/hula.jpg" alt="Hula dancer"><div class="ct"><h4>A real lūʻau, an upcountry table</h4><p>Imu-roasted feast and hula on Kauaʻi; a harvest-to-plate farm lunch on Maui for two people who love to cook.</p></div></div>
     </div>
+    <div class="pcc reveal">
+      <div class="pcc-q">"Is there a Polynesian Cultural Center, like the one on Oʻahu?"</div>
+      <p>Honest answer: not really — the PCC is a one-of-a-kind Oʻahu attraction and nothing on your three islands matches its scale. But the closest, genuinely-worth-it cultural immersions are easy adds — and the best of them are on Kauaʻi:</p>
+      <div class="pcc-cards">
+        <div class="pcc-card"><span class="pcc-tag">Kauaʻi · ~$5 · our pick to add</span><h4>Kamokila Hawaiian Village</h4><p>The only walk-through traditional village on your route — thatched hale, Hawaiian games like spear-throwing and ʻulu maika, and outrigger paddling up the Wailua River. Hands-on, authentic, and almost free.</p></div>
+        <div class="pcc-card"><span class="pcc-tag">Kauaʻi · $10 garden / ~$140 lūʻau</span><h4>Smith's Tropical Paradise</h4><p>A 30-acre botanical garden plus a multi-island cultural pageant — the most "PCC-flavoured" experience on the neighbour islands. This is the lūʻau we'd slot into your Sep 11 evening.</p></div>
+        <div class="pcc-card"><span class="pcc-tag">Big Island · already in your plan ✓</span><h4>Puʻuhonua o Hōnaunau</h4><p>The real thing, not a show: a sacred place of refuge with live koa-canoe carving, lauhala weaving and lei-making by Native Hawaiian practitioners. Deeper and more genuine than any village attraction — and you're already going.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -582,9 +642,15 @@ footer a{color:rgba(255,255,255,.7);text-decoration:underline}
     <div class="eyebrow reveal">Every single day</div>
     <h2 class="big reveal" style="margin-top:8px">Your day-by-day</h2>
     <p class="reveal d1" style="opacity:.85;max-width:620px;margin:14px auto 0;font-weight:300">Hard days spaced with recovery, snorkels in the calm mornings, and the big adventures landing right where your friends are. Flip between the two plans:</p>
-    <div class="toggle reveal d1">
-      <button id="btnA" class="on" onclick="showPlan('A')">Plan A · Three islands</button>
-      <button id="btnB" onclick="showPlan('B')">Plan B · Two islands</button>
+    <div class="toggles reveal d1">
+      <div class="toggle">
+        <button id="btnA" class="on" onclick="setPlan('A')">Plan A · Three islands</button>
+        <button id="btnB" onclick="setPlan('B')">Plan B · Two islands</button>
+      </div>
+      <div class="toggle">
+        <button id="btnTL" class="on" onclick="setView('timeline')">📋 Timeline</button>
+        <button id="btnCAL" onclick="setView('calendar')">📅 Calendar</button>
+      </div>
     </div>
     <div class="isle-key reveal d1">
       <span><i style="background:var(--ember)"></i> Big Island</span>
@@ -644,6 +710,12 @@ footer a{color:rgba(255,255,255,.7);text-decoration:underline}
 </footer>
 
 <div id="lb" onclick="this.classList.remove('on')"><img id="lbimg" src="" alt=""></div>
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <button class="modal-x" onclick="closeModal()" aria-label="Close">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
 <button class="totop" id="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
@@ -687,21 +759,42 @@ B:[
  ["Sep 11","Fri","ka","Recover: reef + lūʻau","easy","Calm summer snorkel and a sunset lūʻau with the crew."],
  ["Sep 12","Sat","travel","Fly out via Honolulu → Asia","travel","Cross the date line; reset; work Monday."]
 ]};
-function showPlan(p){
-  document.getElementById('btnA').classList.toggle('on',p==='A');
-  document.getElementById('btnB').classList.toggle('on',p==='B');
-  const tl=document.getElementById('timeline');tl.innerHTML='';
-  PLANS[p].forEach((d,i)=>{
-    const [date,w,isle,title,load,desc]=d;
-    const loadLabel={easy:'Easy',medium:'Medium',hard:'Hard',travel:'Travel'}[load];
-    const el=document.createElement('div');
-    el.className='day '+isle+' reveal';
-    el.innerHTML=`<div class="date"><div class="d">${date.split(' ')[1]}</div><div class="w">${date.split(' ')[0]} · ${w}</div></div>
-      <div class="card"><h4>${title} <span class="load ${load}">${loadLabel}</span></h4><p>${desc}</p></div>`;
-    tl.appendChild(el);
-  });
-  // re-observe new reveals
-  tl.querySelectorAll('.reveal').forEach((n,i)=>{n.style.transitionDelay=(i%6*0.04)+'s';io.observe(n);});
+let curPlan='A', curView='timeline';
+const LOAD_LABEL={easy:'Easy',medium:'Medium',hard:'Hard',travel:'Travel'};
+const WD=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const CAL_SEQ=[['Aug',23],['Aug',24],['Aug',25],['Aug',26],['Aug',27],['Aug',28],['Aug',29],['Aug',30],['Aug',31],['Sep',1],['Sep',2],['Sep',3],['Sep',4],['Sep',5],['Sep',6],['Sep',7],['Sep',8],['Sep',9],['Sep',10],['Sep',11],['Sep',12]];
+function setPlan(p){curPlan=p;renderItin();}
+function setView(v){curView=v;renderItin();}
+function renderItin(){
+  document.getElementById('btnA').classList.toggle('on',curPlan==='A');
+  document.getElementById('btnB').classList.toggle('on',curPlan==='B');
+  document.getElementById('btnTL').classList.toggle('on',curView==='timeline');
+  document.getElementById('btnCAL').classList.toggle('on',curView==='calendar');
+  const box=document.getElementById('timeline'), data=PLANS[curPlan];
+  if(curView==='timeline'){
+    box.className='tl'; box.innerHTML='';
+    data.forEach(d=>{
+      const [date,w,isle,title,load,desc]=d;
+      const el=document.createElement('div');
+      el.className='day '+isle+' reveal';
+      el.innerHTML=`<div class="date"><div class="d">${date.split(' ')[1]}</div><div class="w">${date.split(' ')[0]} · ${w}</div></div>`+
+        `<div class="card"><h4>${title} <span class="load ${load}">${LOAD_LABEL[load]}</span></h4><p>${desc}</p></div>`;
+      box.appendChild(el);
+    });
+    box.querySelectorAll('.reveal').forEach((n,i)=>{n.style.transitionDelay=(i%6*0.04)+'s';io.observe(n);});
+  } else {
+    box.className='cal-view';
+    const map={}; data.forEach(d=>map[d[0]]=d);
+    let h='<div class="cal-wrap"><div class="cal-grid">';
+    WD.forEach(d=>h+=`<div class="cal-hd">${d}</div>`);
+    CAL_SEQ.forEach(([mon,dy])=>{
+      const e=map[mon+' '+dy];
+      if(e){const [date,w,isle,title,load,desc]=e;
+        h+=`<div class="cal-cell ${isle}"><div class="dn">${dy}</div><div class="ttl">${title}</div><span class="load ${load}">${LOAD_LABEL[load]}</span></div>`;
+      } else {h+=`<div class="cal-cell empty"><div class="dn">${dy}</div></div>`;}
+    });
+    h+='</div></div>'; box.innerHTML=h;
+  }
 }
 
 /* ---- reveal on scroll ---- */
@@ -729,7 +822,51 @@ const lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg');
 document.querySelectorAll('.gal img, .exp-row .thumb').forEach(img=>img.addEventListener('click',()=>{lbimg.src=img.dataset.full||img.src;lb.classList.add('on');}));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on');});
 
-showPlan('A');
+/* ---- booking-brief modals ---- */
+const BRIEFS={
+kalalau:{name:`Kalalau Trail Backpack · Nā Pali, Kauaʻi`,what:`An 11-mile cliffside backpack to remote Kalalau Beach — stream crossings and the famous "Crawler's Ledge" — done as 2–3 nights, camping alongside your friends.`,duration:`2–3 nights · ~6–9 hrs each way`,difficulty:`Expert. Big cumulative climb and narrow, exposed ledges (real fall + flash-flood risk). Full backpacking fitness and sure-footedness essential.`,gear:[`Backpacking pack, tent, sleep system`,`Water filter — treat all stream water`,`Trail shoes + trekking poles`,`Rain shell, headlamp, sun protection`,`All your food (nothing on the trail)`],guide:`DIY / self-guided — no commercial guiding; a self-supported wilderness permit hike.`,cost:`~$35 pp/night permit + $5 fee + parking/shuttle`,book:`Permit at explore.ehawaii.gov, released 90 days ahead at 12:01 AM HST — summer dates vanish in under 30 sec. Parking/shuttle at GoHaena, 30 days out.`,best:`Apr–Sep (your dates work). Start early; never cross a swollen stream.`,note:`A permit is mandatory past Hanakāpīʻai (mile 2) and rangers check. Essentially no cell service.`,link:`https://dlnr.hawaii.gov/dsp/hiking/kauai/kalalau-trail/`},
+haleakala:{name:`Haleakalā Sunrise + Crater Traverse · Maui`,what:`Sunrise at the 3,055 m summit, then hike Sliding Sands down across a Martian crater floor and back up Halemauʻu — a classic point-to-point traverse.`,duration:`Full day · ~18 km, 6–8 hrs hiking + a car shuttle`,difficulty:`Strenuous. Altitude ~3,000 m (cold, thin air), a big climb out, full sun, no shade. Good fitness; not technical.`,gear:[`Warm windproof layers (pre-dawn near freezing)`,`3+ L water`,`Sun hat, sunscreen, sunglasses`,`Trail shoes, headlamp, lunch`,`Two cars or a shuttle plan (point-to-point)`],guide:`DIY / self-guided — no permit to hike; trails are well-marked.`,cost:`$30/vehicle park entry + $1 sunrise reservation`,book:`Sunrise reservation at Recreation.gov — 60 days ahead at 7 AM HST (small batch 48 hrs before). Sells out fast.`,best:`Sunrise, then hike before midday heat. Summit weather flips fast — check the forecast.`,note:`The sunrise reservation only covers 3–7 AM entry — it is NOT a hiking permit and is separate from park entry.`,link:`https://www.recreation.gov/ticket/facility/253731`},
+heli:{name:`Nā Pali Doors-Off Helicopter · Kauaʻi`,what:`A ~60-min open-air flight over the Nā Pali sea cliffs, Waimea Canyon, Mt. Waiʻaleʻale's crater and the "Jurassic" waterfalls — harnessed, unobstructed, the photos of your life.`,duration:`~60–65 min flight · ~2 hrs total with check-in`,difficulty:`Easy (you're a passenger). Weight limits apply; bring motion-sickness meds if prone. It's windy and loud.`,gear:[`Closed-toe shoes; dark, secured clothing`,`No loose items (hats/scarves blow out)`,`Camera/phone on a wrist strap only`,`A light layer (cooler with doors off)`],guide:`Guided (required) — a piloted commercial flight.`,cost:`~$330–415 pp doors-off`,book:`Direct with Jack Harter / Mauna Loa / Air Kauaʻi, 2–4 weeks ahead. Reconfirm — it's weather-dependent.`,best:`Morning = calmest air, best light, fewest cancellations. Keep a buffer day.`,note:`Doors-off has age/weight/clothing rules and absolutely no unsecured objects.`,link:`https://helicopters-kauai.com/hughes-doors-off-tour/`},
+manta:{name:`Manta Ray Night Snorkel · Keauhou, Big Island`,what:`A 5-minute boat ride to "Manta Village", where you float at the surface holding a lit board; the lights draw plankton and giant, harmless mantas barrel-roll inches beneath you.`,duration:`~2–3 hrs total · ~45 min in the water`,difficulty:`Easy–moderate. Just be comfortable floating in open water at night (board + flotation provided). Snorkel only — no diving.`,gear:[`Swimsuit + towel, warm dry layer for after`,`Wetsuit (usually provided / rented)`,`Reef-safe sunscreen only`,`Mask & light board provided`],guide:`Guided (required) — boat-based and guide-led.`,cost:`~$100–160 pp`,book:`Direct with a green-list operator (e.g. Sea Paradise) a few days–1 week ahead; book early in your stay so a free re-ride is possible.`,best:`Right after dusk. ~90%+ sightings; calmer summer seas help.`,note:`Open water in the dark — pick an operator that provides a wetsuit + flotation. Keauhou is the most reliable site.`,link:`https://www.lovebigisland.com/big-island-manta-ray-night-dive/`},
+blackwater:{name:`"Pelagic Magic" Blackwater Dive · Kona`,what:`After dark the boat heads miles offshore over thousands of feet of open ocean; you descend ~12–15 m clipped to a lit tether and watch glowing, alien deep-sea creatures rise around you.`,duration:`~4–4.5 hrs · one tank`,difficulty:`Advanced comfort. Scuba cert required, plus excellent buoyancy and ease floating over the abyss in the dark. Not for new or anxious divers.`,gear:[`Proof of certification (checked)`,`Dive computer; rental gear available`,`Recent logged dives recommended`,`Tank, weights, light included`],guide:`Guided (required) — tethered, small-group, divemaster-led.`,cost:`~$230 pp`,book:`Jack's Diving Locker — Tue & Thu only, max 6 divers. Reserve 1–2+ weeks ahead.`,best:`Night only, just after dusk. Calmer in summer.`,note:`Don't fly or go to altitude (Mauna Kea) within ~18–24 hrs. Only book if you're genuinely comfortable diving.`,link:`https://jacksdivinglocker.com/charters/pelagic-magic-dive`},
+cathedrals:{name:`Lānaʻi Cathedrals Dive · from Maui`,what:`A boat dive to Lānaʻi's "Cathedrals" — lava-tube caverns and arches where sunbeams pour through the ceiling like stained glass. The gentle, awe-inspiring dive.`,duration:`~6 hrs charter (incl. crossing) · 2 tanks`,difficulty:`Moderate. Open-Water cert minimum (a logged dive within ~18 months helps). Caverns and swim-throughs; the crossing can be bumpy.`,gear:[`Proof of certification`,`Dive computer; own or rental gear`,`Motion-sickness meds (channel crossing)`,`Towel, warm layer, reef-safe sunscreen`],guide:`Guided (required) — boat charter, divemaster-led.`,cost:`~$270–330 pp`,book:`Direct with a Lahaina / Māʻalaea operator (Dive Maui, Extended Horizons) 1–2 weeks ahead; confirm cert + recency.`,best:`Late-morning light makes the beams glow; calmer summer crossings.`,note:`The channel crossing can be rough — take seasickness precautions. No flying/altitude for ~18–24 hrs after.`,link:`https://goscubadivemaui.com/lanai-cathedrals/`},
+maunakea:{name:`Mauna Kea Summit + Stargazing · Big Island`,what:`Drive above the clouds for sunset at the 4,200 m summit, then stargaze under some of Earth's darkest skies (best from the visitor station at 2,800 m).`,duration:`~7–8 hrs (guided tour)`,difficulty:`Low exertion but serious high altitude (4,200 m) — thin air, cold, a mandatory acclimatization stop.`,gear:[`Heavy warm layers, hat, gloves (freezing after dark)`,`Closed shoes; red-light headlamp`,`Water + snacks`,`Full tank + a true 4WD if self-driving`],guide:`Guided (recommended) — tours handle the 4WD road, altitude, warm gear and dinner. DIY needs a real 4WD (most rentals forbid the road).`,cost:`Guided ~$240–330 pp`,book:`A tour (e.g. Mauna Kea Summit Adventures) 1–2 weeks ahead.`,best:`Sunset → early night; darkest near a new moon. Road can close for weather.`,note:`Not for pregnancy, heart/lung conditions, or within ~24 hrs of scuba diving. Descend immediately if altitude-sick.`,link:`https://www.lovebigisland.com/stargazing/`},
+hanakapiai:{name:`Hanakāpīʻai Falls Day Hike · Kauaʻi`,what:`From Keʻe Beach, 2 mi along the Nā Pali coast to Hanakāpīʻai Beach, then 2 mi up a lush valley to a ~90 m waterfall and pool. The big day-hike if you skip the overnight.`,duration:`~13 km round trip · 6–8 hrs`,difficulty:`Strenuous. Steep, muddy, slippery, with stream crossings; the falls section is unmaintained. No altitude.`,gear:[`Real trail shoes + trekking poles`,`2+ L water, snacks`,`Rain shell, sun protection, swimwear`,`Bug spray`],guide:`DIY / self-guided.`,cost:`Free hike, but a Hāʻena reservation: ~$5 pp entry + parking, or the shuttle`,book:`Reserve entry + parking (or shuttle) at GoHaena.com — released 30 days ahead. No reservation = no entry.`,best:`Earliest morning slot (cooler, parking, beat afternoon rain). Dry weather only.`,note:`Never cross Hanakāpīʻai Stream if it's high or fast (flash-flood deaths have happened). The beach surf is deadly — no swimming.`,link:`https://gohaena.com/`},
+captaincook:{name:`Captain Cook Hike + Kealakekua Snorkel · Big Island`,what:`A steep DIY hike down to Kealakekua Bay — one of the island's best reefs (coral, fish, often spinner dolphins) — then the sweaty climb back out.`,duration:`~6 km round trip · 2–4 hrs + your snorkel time`,difficulty:`Strenuous on the return — ~390 m climb, full sun, loose lava, and no shade/water/cell on the trail. The snorkel itself is easy in the calm bay.`,gear:[`3+ L water pp (critical — none on trail)`,`Closed-toe trail shoes`,`Snorkel gear (carry it down) + reef-safe sunscreen`,`Hat, sun shirt, snacks`],guide:`DIY / self-guided (a permit is only needed to kayak across).`,cost:`Free`,book:`No booking — limited roadside parking, so arrive at sunrise.`,best:`Start at dawn — do the climb out before midday heat; calm summer mornings give the best visibility.`,note:`People are regularly rescued here for heat exhaustion on the climb out — keep water and energy in reserve.`,link:`https://www.lovebigisland.com/kealakekua-bay/`},
+oofarm:{name:`Oʻo Farm Farm-to-Table Lunch · Upcountry Maui`,what:`A guided walk through a regenerative organic farm at 3,500 ft, harvesting as you go, followed by a chef-prepared gourmet lunch built from what you just picked.`,duration:`~3 hrs (lunch tour 10:30–1:30)`,difficulty:`Easy. Gentle walking on uneven ground.`,gear:[`Comfortable closed shoes`,`A light layer + sun hat (Upcountry is cooler)`,`Sunscreen`,`An appetite`],guide:`Guided (required) — reservation-only farm tour.`,cost:`~$150 pp (lunch tour)`,book:`Direct at oofarm.com, Mon–Fri only, 1–2+ weeks ahead.`,best:`The late-morning lunch tour. Weekdays only.`,note:`It's a winding Upcountry road — allow drive time; a wine pairing may cost extra.`,link:`https://oofarm.com/tours`},
+lydgate:{name:`Lydgate Farms Chocolate Tour · Kauaʻi`,what:`A guided walk through a botanical farm near Kapaʻa — taste honey, vanilla and tropical fruit, meet a beehive, and follow cacao tree-to-bar to a tasting of award-winning estate chocolate.`,duration:`~3 hrs`,difficulty:`Easy. Light walking on garden paths.`,gear:[`Closed walking shoes`,`Sun hat, sunscreen, bug spray`,`A light rain layer (windward Kauaʻi)`,`Water`],guide:`Guided (required) — reservation-only.`,cost:`~$125 pp (no under-7)`,book:`Direct at lydgatefarms.com up to ~1 month ahead; it sells out in season.`,best:`Morning/midday; year-round.`,note:`Pricey for 3 hrs, but consistently rated Kauaʻi's best farm experience. Pair it with the Smith's lūʻau.`,link:`https://lydgatefarms.com/chocolate-farm-tour/`}
+};
+const modal=document.getElementById('modal'), mc=document.getElementById('modal-content');
+function openModal(key){
+  const b=BRIEFS[key]; if(!b)return;
+  const gear=b.gear.map(g=>`<li>${g}</li>`).join('');
+  const gc=/DIY/.test(b.guide)?'#1f7a44':(/recommended/i.test(b.guide)?'#9a6a07':'#c0410f');
+  mc.innerHTML=`<h3>${b.name}</h3><p class="m-what">${b.what}</p>`+
+    `<span class="m-guide" style="background:${gc}1f;color:${gc}">${b.guide}</span>`+
+    `<div class="m-grid"><div class="m-cell"><div class="ml">How long</div><div class="mv">${b.duration}</div></div>`+
+    `<div class="m-cell"><div class="ml">Cost</div><div class="mv">${b.cost}</div></div>`+
+    `<div class="m-cell"><div class="ml">Difficulty</div><div class="mv">${b.difficulty}</div></div>`+
+    `<div class="m-cell"><div class="ml">Best time</div><div class="mv">${b.best}</div></div></div>`+
+    `<div class="m-gear"><div class="ml">What to bring</div><ul>${gear}</ul></div>`+
+    `<div class="m-cell" style="margin-bottom:16px"><div class="ml">How to book</div><div class="mv">${b.book}</div></div>`+
+    `<div class="m-note"><b>Good to know — </b>${b.note}</div>`+
+    (b.link?`<a class="m-book" href="${b.link}" target="_blank" rel="noopener">Open booking / info ↗</a>`:'');
+  modal.classList.add('on'); document.body.style.overflow='hidden';
+}
+function closeModal(){modal.classList.remove('on'); document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+const TRIG=[['Manta ray night','manta'],['Captain Cook','captaincook'],['Mauna Kea','maunakea'],['Haleakal','haleakala'],['Cathedrals','cathedrals'],['farm-to-table','oofarm'],['Kalalau Trail','kalalau'],['helicopter','heli'],['Hanak','hanakapiai'],['Lydgate','lydgate']];
+document.querySelectorAll('.exp-row').forEach(row=>{
+  const h=row.querySelector('h4'); if(!h)return; const t=h.textContent;
+  for(const [sub,key] of TRIG){ if(t.indexOf(sub)>-1){
+    const btn=document.createElement('button'); btn.className='planbtn'; btn.type='button'; btn.innerHTML='ⓘ Plan &amp; book';
+    btn.addEventListener('click',()=>openModal(key));
+    (row.querySelector('.tags')||h.parentNode).appendChild(btn); break;
+  }}
+});
+document.querySelectorAll('[data-exp-btn]').forEach(b=>b.addEventListener('click',()=>openModal(b.getAttribute('data-exp-btn'))));
+
+renderItin();
 </script>
 </body>
 </html>
